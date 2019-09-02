@@ -1,40 +1,39 @@
 #EXERCICIO 01
 #MyData <- read.csv(file="C:/Users/UFSM/Downloads/LD00.csv", header=TRUE, sep=",")
-y <- read.csv(file="/ncc/hp39/Downloads/DimR00.csv", header=TRUE, na.strings=c("","NA"))
+var <- read.csv(file="DimR00.csv", header=TRUE, na.strings=c("","NA"))
 
-x <- 1:100
+#pega a coluna 1
+x <- var[,1]
 
-#pegar coluna 2
-y<- y[,2]
+#pega a coluna 2
+y <- var[,2]
 
-myfit <- lm(x ~ y)
-plot(x,y, data=myfit, geom=c("point","smooth"))
+myfit <- lm(y ~ x)
+plot(x, y, data=myfit, geom=c("point", "smooth"))
 
-newY = as.integer(y)
+#cria categorias
+factor(y)
 
-plot(x,newY, data=myfit, geom=c("point","smooth"))
-#lines(x, y, type = "l")
-
-#EXERCICIO 02
+#exercício 02
 conta <- 0
-myMat <- matrix(nrow = 10, ncol = 10)
+val <- c()
+myMat <- matrix(nrow=10, ncol=10)
+
 for (i in 1:10) {
   for (j in 1:10) {
-    if(i==j){
-      conta<-conta+1
+    if (i == j) {
+      conta <- conta + 1
       myMat[i,j] <- conta
-    }else{
+    } else {
       myMat[i,j] <- 0
     }
   }
 }
 
-dim(myMat)
-
 for (i in 1:10) {
   for (j in 1:10) {
-    if(myMat[i,j] != 0){
-      arr <- c(arr, myMat[i,j])
+    if (myMat[i,j] != 0) {
+      val <- c(val, myMat[i,j])
     }
   }
 }

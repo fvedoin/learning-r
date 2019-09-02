@@ -16,4 +16,3 @@ data.frame(var$Nome, var$Afiliação, var$QI)
 var[(is.na(var$QI)),]
 qi <- var[(var$QI > 120 & !is.na(var$QI)),]
 qi[order(qi$QI),]
-

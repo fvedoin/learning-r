@@ -1,4 +1,4 @@
-var <- read.csv(file="C:/Users/Felipe/Downloads/z.csv", header=TRUE, sep=",")
+var <- read.csv(file="z.csv", header=TRUE, sep=",")
 headers <- sort(levels(unique(unlist(var))))
 results <- data.frame(matrix(nrow=nrow(var),ncol=length(headers))) 
 colnames(results) <- headers
