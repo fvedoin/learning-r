@@ -16,3 +16,6 @@ b[!complete.cases(b)] = mean(b, na.rm = TRUE)
 
 max <- max(b, na.rm = TRUE)
 min <- min(b, na.rm = TRUE)
+
+#dia com mais precipitação
+arq[(arq$Precipitacao = max(b, na.rm = TRUE)),]
